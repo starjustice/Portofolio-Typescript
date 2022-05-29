@@ -1,11 +1,13 @@
-import React from "react";
+/** @jsxImportSource @emotion/react */
+
+import { ContactInformation, Header } from "../component";
 import { Text } from "../core-ui";
 
 export default function Home() {
   return (
     <div>
-      <h1>Home</h1>
-      <Text style={{ color: "red" }}>ada</Text>
+      <Header />
+      <ContactInformation />
     </div>
   );
 }

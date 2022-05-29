@@ -16,3 +16,12 @@ export let FONTS_SIZE = {
   xxLarge: 48,
   jumbo: 60,
 };
+
+export let PADDING_MARGIN = {
+  small: 8,
+  medium: 16,
+  large: 24,
+  xLarge: 32,
+  xxLarge: 40,
+  jumbo: 60,
+};

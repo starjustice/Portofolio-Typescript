@@ -1,3 +1,5 @@
+/** @jsxImportSource @emotion/react */
+
 import { css } from "@emotion/react";
 import { CSSInterpolation } from "@emotion/serialize";
 
@@ -10,8 +12,11 @@ type CardProps = {
 
 export default function Card(props: CardProps) {
   const { style, children } = props;
-
-  <div css={[styles.shadowStyle, styles.cardContainer, style]}>{children}</div>;
+  return (
+    <div css={[styles.shadowStyle, styles.cardContainer, style]}>
+      {children}
+    </div>
+  );
 }
 
 function Header({ style, children }: CardProps) {
@@ -33,13 +38,7 @@ Card.Content = Content;
 const styles = {
   shadowStyle: css({
     borderRadius: 12,
-    shadowColor: COLORS.black,
-    shadowOpacity: 0.2,
-    shadowRadius: 12,
-    shadowOffset: {
-      height: 4,
-      width: 0,
-    },
+    boxShadow: `3px 2px 10px ${COLORS.black}`,
   }),
   cardContainer: css({
     backgroundColor: COLORS.white,

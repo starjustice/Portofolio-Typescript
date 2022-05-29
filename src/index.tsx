@@ -1,16 +1,26 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
+import { Global, css } from "@emotion/react";
 import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
-import Home from "./scene/Home";
+
+import Hallelujah from "./assets/fonts/gloria_hallelujah/gloriahallelujah.ttf";
+
+const globalStyles = css`
+  @font-face {
+    font-family: "Hallelujah";
+    src: url(${Hallelujah}) format("opentype");
+  }
+`;
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
 );
 root.render(
   <React.StrictMode>
-    <Home />
+    <Global styles={globalStyles} />
+    <App />
   </React.StrictMode>
 );
 

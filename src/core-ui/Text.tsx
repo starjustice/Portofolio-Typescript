@@ -1,3 +1,5 @@
+/** @jsxImportSource @emotion/react */
+
 import React from "react";
 import { css } from "@emotion/react";
 import { CSSInterpolation } from "@emotion/serialize";
@@ -12,7 +14,7 @@ type TextProps = {
 export default function Text(props: TextProps) {
   const { style, children } = props;
   return (
-    <div css={[styles.defaultText, style]} {...props}>
+    <div css={{ ...styles.defaultText, style }} {...props}>
       {children}
     </div>
   );
