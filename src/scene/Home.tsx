@@ -1,12 +1,13 @@
 /** @jsxImportSource @emotion/react */
 
-import { ContactInformation, Header } from "../component";
-import { Text } from "../core-ui";
+import { ContactInformation, Header, Project, Technology } from "../component";
 
 export default function Home() {
   return (
     <div>
       <Header />
+      <Technology />
+      <Project />
       <ContactInformation />
     </div>
   );

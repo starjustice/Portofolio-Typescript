@@ -6,11 +6,16 @@ import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 
 import Hallelujah from "./assets/fonts/gloria_hallelujah/gloriahallelujah.ttf";
+import Bignoodletitling from "./assets/fonts/bignoodletitling/big_noodle_titling.ttf";
 
 const globalStyles = css`
   @font-face {
     font-family: "Hallelujah";
     src: url(${Hallelujah}) format("opentype");
+  }
+  @font-face {
+    font-family: "Bignood";
+    src: url(${Bignoodletitling}) format("opentype");
   }
 `;
 
