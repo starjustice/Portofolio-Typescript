@@ -5,8 +5,12 @@ import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 
-import Hallelujah from "./assets/fonts/gloria_hallelujah/gloriahallelujah.ttf";
-import Bignoodletitling from "./assets/fonts/bignoodletitling/big_noodle_titling.ttf";
+import {
+  Hallelujah,
+  MadeTommy,
+  MadeTommyBold,
+  MadeTommyMedium,
+} from "./assets/fonts";
 
 const globalStyles = css`
   @font-face {
@@ -14,8 +18,18 @@ const globalStyles = css`
     src: url(${Hallelujah}) format("opentype");
   }
   @font-face {
-    font-family: "Bignood";
-    src: url(${Bignoodletitling}) format("opentype");
+    font-family: "MadeTommy";
+    src: url(${MadeTommy}) format("opentype");
+  }
+  @font-face {
+    font-family: "MadeTommy";
+    font-weight: bold;
+    src: url(${MadeTommyBold}) format("opentype");
+  }
+  @font-face {
+    font-family: "MadeTommy";
+    font-weight: 300;
+    src: url(${MadeTommyMedium}) format("opentype");
   }
 `;
 

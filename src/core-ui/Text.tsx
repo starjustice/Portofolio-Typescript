@@ -25,5 +25,7 @@ const styles = {
     fontSize: FONTS_SIZE.medium,
     display: "flex",
     flexDirection: "row",
+    fontFamily: "MadeTommy",
+    // letterSpacing: "0.1em",
   }),
 };

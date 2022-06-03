@@ -2,32 +2,49 @@
 
 import { css } from "@emotion/react";
 
-import { COLORS, FONTS_SIZE } from "../general/styles";
-import { Card, Text } from "../core-ui";
-import { Code, MyImage } from "../assets/images";
+import { COLORS, FONTS_SIZE, PADDING_MARGIN } from "../general/styles";
+import { Card, Row, Text } from "../core-ui";
+import { Computer, MyImage } from "../assets/images";
 import { DESCRIPTION } from "../general/data/aboutMe";
 
 export default function Header() {
   return (
     <div css={styles.headerContainer}>
       <Card style={styles.cardStyle}>
-        <div css={styles.leftColumn}>
-          <div css={styles.introductionTextContainer}>
-            <Text css={styles.introductionText}>Hello, </Text>
-            <Text css={styles.introductionText}>
-              {DESCRIPTION.introductionName}
+        <Row style={styles.rowContainer}>
+          <div css={styles.leftColumn}>
+            <div css={styles.introductionTextContainer}>
+              <Text data-comp="text" css={styles.introductionText}>
+                Hello,{" "}
+              </Text>
+              <Text data-comp="text" css={styles.introductionText}>
+                {DESCRIPTION.introductionName}
+              </Text>
+            </div>
+            <Text
+              data-comp="text"
+              css={{ ...styles.descText, marginTop: "20px" }}
+            >
+              Software Engineer From Indonesia.
+            </Text>
+            <Text
+              data-comp="text"
+              css={{ ...styles.descText, marginTop: "5px" }}
+            >
+              Live in Jakarta and born in 1997
             </Text>
           </div>
-          <Text css={{ ...styles.descText, marginTop: "20px" }}>
-            Software Engineer From Indonesia.
-          </Text>
-          <Text css={{ ...styles.descText, marginTop: "5px" }}>
-            Live in Jakarta and born in 1997
-          </Text>
-        </div>
-        <div css={styles.rightColumn}>
-          <img alt="" src={MyImage} css={styles.avatar} />
-        </div>
+          <div css={styles.rightColumn}>
+            <img alt="" src={MyImage} css={styles.avatar} />
+          </div>
+        </Row>
+        <Text data-comp="quoteText" css={styles.quoteText}>
+          "Don’t worry about failures worry about the chances you miss when you
+          don’t even try."
+        </Text>
+        <Text data-comp="quoteText" css={styles.quoteText}>
+          - Jack Canfield -
+        </Text>
       </Card>
     </div>
   );
@@ -37,7 +54,7 @@ const styles = {
   headerContainer: css({
     display: "flex",
     height: "70vh",
-    backgroundImage: `url(${Code})`,
+    backgroundImage: `url(${Computer})`,
     backgroundRepeat: "no-repeat",
     backgroundSize: "cover",
     flexWrap: "wrap-reverse",
@@ -59,12 +76,14 @@ const styles = {
   introductionText: css({
     fontSize: FONTS_SIZE.xxLarge,
     fontWeight: "bold",
-    color: COLORS.white,
+    color: COLORS.whiteCream,
+    transition: "color 1.2s ease-in-out",
   }),
   descText: css({
     fontSize: FONTS_SIZE.large,
     fontWeight: "bold",
-    color: COLORS.teal,
+    color: COLORS.whiteCream,
+    transition: "color 1.2s ease-in-out",
   }),
   middleColumn: css({
     display: "flex",
@@ -93,10 +112,31 @@ const styles = {
   }),
   cardStyle: css({
     opacity: 1,
-    display: "flex",
-    backgroundColor: "rgba(0,0,0,0.6)",
+    flex: 1,
+    backgroundColor: "rgba(0,0,0,0.2)",
+    transition: "0.5s all ease-in-out",
     "&:hover": {
-      backgroundColor: "teal",
+      transform: "scale(1.05)",
+      background: "rgba(0,0,0,0.9)",
     },
+    "&:hover [data-comp=text]": {
+      color: COLORS.white,
+    },
+    "&:hover [data-comp=quoteText]": {
+      fontWeight: "bold",
+      fontSize: FONTS_SIZE.large,
+    },
+  }),
+  quoteText: css({
+    fontSize: FONTS_SIZE.medium,
+    color: COLORS.white,
+    textAlign: "center",
+    justifyContent: "center",
+    fontFamily: "Hallelujah",
+    transition: "font-size 1.2s ease-in-out",
+    lineHeight: 1.7,
+  }),
+  rowContainer: css({
+    marginBottom: PADDING_MARGIN.large,
   }),
 };
