@@ -16,7 +16,7 @@ import { COLORS, FONTS_SIZE, PADDING_MARGIN } from "../general/styles";
 export default function Project() {
   return (
     <div css={styles.container}>
-      <Text css={styles.projectText}>Project</Text>
+      <Text css={styles.projectText}>PROJECT</Text>
       <Timeline
         theme={{
           ...themes.default,
@@ -127,7 +127,9 @@ export default function Project() {
 }
 
 const styles = {
-  container: css({}),
+  container: css({
+    marginTop: PADDING_MARGIN.jumbo,
+  }),
   projectText: css({
     justifyContent: "center",
     marginBottom: PADDING_MARGIN.xLarge,

@@ -6,6 +6,7 @@ export let COLORS = {
   darkIndigo: "#1a237e",
   indigo: "#c5cae9",
   darkPurple: "#4a148c",
+  whiteCream: "#fcf1d2",
 };
 
 export let FONTS_SIZE = {
