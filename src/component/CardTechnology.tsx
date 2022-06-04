@@ -1,6 +1,5 @@
 /** @jsxImportSource @emotion/react */
 
-import { css } from "@emotion/react";
 import { CSSInterpolation } from "@emotion/serialize";
 
 import { Card, List, Text } from "../core-ui";
