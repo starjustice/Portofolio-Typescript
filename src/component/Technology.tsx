@@ -34,13 +34,13 @@ const styles = {
   skillText: css({
     justifyContent: "center",
     marginBottom: PADDING_MARGIN.xLarge,
-    fontSize: FONTS_SIZE.xLarge,
+    fontSize: FONTS_SIZE.xxLarge,
     fontWeight: "bold",
   }),
   cardContainer: css({
     display: "flex",
     justifyContent: "space-between",
-    padding: "0px 60px",
+
     alignItems: "stretch",
   }),
   card: css({

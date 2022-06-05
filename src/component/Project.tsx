@@ -10,7 +10,7 @@ import {
 } from "@merc/react-timeline";
 
 import { Row, Text } from "../core-ui";
-import { data } from "../general/data/work";
+import { data, KODEFOX_LINK } from "../general/data/work";
 import { COLORS, FONTS_SIZE, PADDING_MARGIN } from "../general/styles";
 
 export default function Project() {
@@ -20,6 +20,21 @@ export default function Project() {
       <Timeline
         theme={{
           ...themes.default,
+          marker: {
+            backgroundColor: "#fff",
+            border: "2px solid #EB2DB4",
+            borderRadius: "50%",
+            width: "20px",
+            height: "20px",
+            zIndex: 100,
+          },
+          timelineTrack: {
+            left: "50%",
+            width: "2px",
+            height: "100%",
+            backgroundColor: "#ee18b6",
+            content: "''",
+          },
           imageAtom: {
             objectFit: "contain",
             overflow: "hidden",
@@ -30,10 +45,10 @@ export default function Project() {
             borderRadius: "4px",
             backgroundColor: "#fff",
             color: "#333",
-            padding: "10px",
+            padding: "12px",
             boxShadow: "0 4px 6px 0 hsla(0, 0%, 0%, 0.2)",
             width: "auto",
-            maxWidth: "560px",
+            maxWidth: "500px",
             a: {
               color: "#EC24B5",
             },
@@ -41,12 +56,14 @@ export default function Project() {
           imageText: {
             marginBottom: "10px",
             fontSize: FONTS_SIZE.xLarge + "px",
-            fontWeight: 500,
+            fontWeight: "bold",
+            fontFamily: "MadeTommy",
           },
           textAtom: {
-            marginBottom: "10px",
+            marginBottom: "12px",
             fontSize: FONTS_SIZE.xLarge + "px",
-            fontWeight: 500,
+            fontWeight: "bold",
+            fontFamily: "MadeTommy",
           },
         }}
       >
@@ -58,10 +75,17 @@ export default function Project() {
                   {image ? (
                     <ImageEvent date={year} text={title} src={image}>
                       <div css={styles.projectCompanyContainer}>
-                        <Text style={styles.projectCompanyText}>{company}</Text>
+                        <Text
+                          css={styles.projectCompanyText}
+                          onClick={() => {
+                            window.open(KODEFOX_LINK, "_blank");
+                          }}
+                        >
+                          {company}
+                        </Text>
                       </div>
                       {technology.length > 0 ? (
-                        <Row>
+                        <Row style={styles.rowLabelContainer}>
                           {technology.map((name) => {
                             return (
                               <div
@@ -87,17 +111,24 @@ export default function Project() {
                       ) : null}
 
                       <div>
-                        <Text style={styles.projectDescText}>{desc}</Text>
+                        <Text css={styles.projectDescText}>{desc}</Text>
                       </div>
                     </ImageEvent>
                   ) : (
                     <TextEvent date={year} text={title}>
                       <div css={styles.projectCompanyContainer}>
-                        <Text style={styles.projectCompanyText}>{company}</Text>
+                        <Text
+                          css={styles.projectCompanyText}
+                          onClick={() => {
+                            window.open(KODEFOX_LINK, "_blank");
+                          }}
+                        >
+                          {company}
+                        </Text>
                       </div>
                       <div>
                         {technology.length > 0 ? (
-                          <Row>
+                          <Row style={styles.rowLabelContainer}>
                             {technology.map((name) => {
                               return (
                                 <div
@@ -112,7 +143,7 @@ export default function Project() {
                             })}
                           </Row>
                         ) : null}
-                        <Text style={styles.projectDescText}>{desc}</Text>
+                        <Text css={styles.projectDescText}>{desc}</Text>
                       </div>
                     </TextEvent>
                   )}
@@ -133,7 +164,7 @@ const styles = {
   projectText: css({
     justifyContent: "center",
     marginBottom: PADDING_MARGIN.xLarge,
-    fontSize: FONTS_SIZE.xLarge,
+    fontSize: FONTS_SIZE.xxLarge,
     fontWeight: "bold",
   }),
   projectCompanyContainer: css({
@@ -144,6 +175,9 @@ const styles = {
   projectCompanyText: css({
     fontsize: FONTS_SIZE.large,
     marginBottom: 12,
+    fontWeight: 900,
+    cursor: "pointer",
+    color: COLORS.blueKodefox,
   }),
   projectDescText: css({
     fontsize: FONTS_SIZE.medium,
@@ -157,5 +191,10 @@ const styles = {
     padding: 8,
     borderRadius: 18,
     fontsize: FONTS_SIZE.small,
+    whiteSpace: "nowrap",
+    marginBottom: PADDING_MARGIN.small,
+  }),
+  rowLabelContainer: css({
+    flexWrap: "wrap",
   }),
 };
