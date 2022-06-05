@@ -26,6 +26,5 @@ const styles = {
     display: "flex",
     flexDirection: "row",
     fontFamily: "MadeTommy",
-    // letterSpacing: "0.1em",
   }),
 };

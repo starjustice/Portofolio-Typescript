@@ -1,6 +1,7 @@
 /** @jsxImportSource @emotion/react */
 
 import { css } from "@emotion/react";
+import { Fade } from "react-reveal";
 
 import { COLORS, FONTS_SIZE, PADDING_MARGIN } from "../general/styles";
 import { Card, Row, Text } from "../core-ui";
@@ -10,42 +11,44 @@ import { DESCRIPTION } from "../general/data/aboutMe";
 export default function Header() {
   return (
     <div css={styles.headerContainer}>
-      <Card style={styles.cardStyle}>
-        <Row style={styles.rowContainer}>
-          <div css={styles.leftColumn}>
-            <div css={styles.introductionTextContainer}>
-              <Text data-comp="text" css={styles.introductionText}>
-                Hello,{" "}
+      <Fade duration={5000}>
+        <Card style={styles.cardStyle}>
+          <Row style={styles.rowContainer}>
+            <div css={styles.leftColumn}>
+              <div css={styles.introductionTextContainer}>
+                <Text data-comp="text" css={styles.introductionText}>
+                  Hello,{" "}
+                </Text>
+                <Text data-comp="text" css={styles.introductionText}>
+                  {DESCRIPTION.introductionName}
+                </Text>
+              </div>
+              <Text
+                data-comp="text"
+                css={{ ...styles.descText, marginTop: "20px" }}
+              >
+                Software Engineer From Indonesia.
               </Text>
-              <Text data-comp="text" css={styles.introductionText}>
-                {DESCRIPTION.introductionName}
+              <Text
+                data-comp="text"
+                css={{ ...styles.descText, marginTop: "5px" }}
+              >
+                Live in Jakarta and born in 1997
               </Text>
             </div>
-            <Text
-              data-comp="text"
-              css={{ ...styles.descText, marginTop: "20px" }}
-            >
-              Software Engineer From Indonesia.
-            </Text>
-            <Text
-              data-comp="text"
-              css={{ ...styles.descText, marginTop: "5px" }}
-            >
-              Live in Jakarta and born in 1997
-            </Text>
-          </div>
-          <div css={styles.rightColumn}>
-            <img alt="" src={MyImage} css={styles.avatar} />
-          </div>
-        </Row>
-        <Text data-comp="quoteText" css={styles.quoteText}>
-          "Don’t worry about failures worry about the chances you miss when you
-          don’t even try."
-        </Text>
-        <Text data-comp="quoteText" css={styles.quoteText}>
-          - Jack Canfield -
-        </Text>
-      </Card>
+            <div css={styles.rightColumn}>
+              <img alt="" src={MyImage} css={styles.avatar} />
+            </div>
+          </Row>
+          <Text data-comp="quoteText" css={styles.quoteText}>
+            "Don’t worry about failures worry about the chances you miss when
+            you don’t even try."
+          </Text>
+          <Text data-comp="quoteText" css={styles.quoteText}>
+            - Jack Canfield -
+          </Text>
+        </Card>
+      </Fade>
     </div>
   );
 }

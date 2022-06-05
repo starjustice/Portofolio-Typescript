@@ -1,6 +1,8 @@
 /** @jsxImportSource @emotion/react */
 
 import { css } from "@emotion/react";
+import { Fade, Zoom } from "react-reveal";
+
 import { ListIconContact } from ".";
 
 import { Row, Text } from "../core-ui";

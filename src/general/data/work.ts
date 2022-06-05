@@ -60,6 +60,8 @@ export let data = [
     year: "2020-2022",
     company: "KODEFOX",
     color: COLORS.indigo,
+    linkProject:
+      "https://play.google.com/store/apps/details?id=com.dbo.newdboindonesiahd&hl=in&gl=US",
   },
 ];
 

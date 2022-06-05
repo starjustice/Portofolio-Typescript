@@ -1,6 +1,8 @@
 /** @jsxImportSource @emotion/react */
 
 import { css } from "@emotion/react";
+import { Fade, Bounce } from "react-reveal";
+
 import { Row, Text } from "../core-ui";
 
 import { skill } from "../general/data/skill";
@@ -10,19 +12,23 @@ import CardTechnology from "./CardTechnology";
 export default function Technology() {
   return (
     <div css={styles.containerSkill}>
-      <Text css={styles.skillText}>SKILL</Text>
-      <Row style={styles.cardContainer}>
-        <CardTechnology
-          title={skill[0].tech}
-          data={skill[0].list}
-          styleCard={styles.card}
-        />
-        <CardTechnology
-          title={skill[1].tech}
-          data={skill[1].list}
-          styleCard={styles.card}
-        />
-      </Row>
+      <Text css={styles.skillText}>
+        <Fade left>SKILL</Fade>
+      </Text>
+      <Bounce cascade>
+        <Row style={styles.cardContainer}>
+          <CardTechnology
+            title={skill[0].tech}
+            data={skill[0].list}
+            styleCard={styles.card}
+          />
+          <CardTechnology
+            title={skill[1].tech}
+            data={skill[1].list}
+            styleCard={styles.card}
+          />
+        </Row>
+      </Bounce>
     </div>
   );
 }

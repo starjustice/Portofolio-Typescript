@@ -1,6 +1,8 @@
 /** @jsxImportSource @emotion/react */
 
 import { css } from "@emotion/react";
+import { Fade, Zoom } from "react-reveal";
+
 import {
   Timeline,
   Events,
@@ -9,6 +11,8 @@ import {
   themes,
 } from "@merc/react-timeline";
 
+import "../styles/project.css";
+
 import { Row, Text } from "../core-ui";
 import { data, KODEFOX_LINK } from "../general/data/work";
 import { COLORS, FONTS_SIZE, PADDING_MARGIN } from "../general/styles";
@@ -16,8 +20,11 @@ import { COLORS, FONTS_SIZE, PADDING_MARGIN } from "../general/styles";
 export default function Project() {
   return (
     <div css={styles.container}>
-      <Text css={styles.projectText}>PROJECT</Text>
+      <Text css={styles.projectText}>
+        <Fade right>PROJECT</Fade>
+      </Text>
       <Timeline
+        opts={{ layout: "inline-evts" }}
         theme={{
           ...themes.default,
           marker: {
@@ -54,7 +61,7 @@ export default function Project() {
             },
           },
           imageText: {
-            marginBottom: "10px",
+            marginBottom: "12px",
             fontSize: FONTS_SIZE.xLarge + "px",
             fontWeight: "bold",
             fontFamily: "MadeTommy",
@@ -69,64 +76,42 @@ export default function Project() {
       >
         <Events>
           {data.map(
-            ({ title, desc, image, technology, color, company, year }) => {
+            ({
+              title,
+              desc,
+              image,
+              technology,
+              color,
+              company,
+              year,
+              linkProject,
+            }) => {
               return (
                 <>
-                  {image ? (
-                    <ImageEvent date={year} text={title} src={image}>
-                      <div css={styles.projectCompanyContainer}>
-                        <Text
-                          css={styles.projectCompanyText}
-                          onClick={() => {
-                            window.open(KODEFOX_LINK, "_blank");
-                          }}
-                        >
-                          {company}
-                        </Text>
-                      </div>
-                      {technology.length > 0 ? (
-                        <Row style={styles.rowLabelContainer}>
-                          {technology.map((name) => {
-                            return (
-                              <div
-                                css={[
-                                  styles.labelContainerTechnology,
-                                  { backgroundColor: color },
-                                ]}
-                              >
-                                <Text
-                                  style={{
-                                    color:
-                                      color === COLORS.darkPurple
-                                        ? COLORS.white
-                                        : COLORS.black,
-                                  }}
-                                >
-                                  {name}
-                                </Text>
-                              </div>
-                            );
-                          })}
-                        </Row>
-                      ) : null}
-
-                      <div>
-                        <Text css={styles.projectDescText}>{desc}</Text>
-                      </div>
-                    </ImageEvent>
-                  ) : (
-                    <TextEvent date={year} text={title}>
-                      <div css={styles.projectCompanyContainer}>
-                        <Text
-                          css={styles.projectCompanyText}
-                          onClick={() => {
-                            window.open(KODEFOX_LINK, "_blank");
-                          }}
-                        >
-                          {company}
-                        </Text>
-                      </div>
-                      <div>
+                  <Zoom>
+                    {image ? (
+                      <ImageEvent
+                        date={year}
+                        text={title}
+                        src={image}
+                        onClick={
+                          linkProject
+                            ? () => {
+                                window.open(linkProject, "_blank");
+                              }
+                            : ""
+                        }
+                      >
+                        <div css={styles.projectCompanyContainer}>
+                          <Text
+                            css={styles.projectCompanyText}
+                            onClick={() => {
+                              window.open(KODEFOX_LINK, "_blank");
+                            }}
+                          >
+                            {company}
+                          </Text>
+                        </div>
                         {technology.length > 0 ? (
                           <Row style={styles.rowLabelContainer}>
                             {technology.map((name) => {
@@ -137,16 +122,60 @@ export default function Project() {
                                     { backgroundColor: color },
                                   ]}
                                 >
-                                  <Text>{name}</Text>
+                                  <Text
+                                    style={{
+                                      color:
+                                        color === COLORS.darkPurple
+                                          ? COLORS.white
+                                          : COLORS.black,
+                                    }}
+                                  >
+                                    {name}
+                                  </Text>
                                 </div>
                               );
                             })}
                           </Row>
                         ) : null}
-                        <Text css={styles.projectDescText}>{desc}</Text>
-                      </div>
-                    </TextEvent>
-                  )}
+
+                        <div>
+                          <Text css={styles.projectDescText}>{desc}</Text>
+                        </div>
+                      </ImageEvent>
+                    ) : (
+                      <TextEvent date={year} text={title}>
+                        <div css={styles.projectCompanyContainer}>
+                          <Text
+                            css={styles.projectCompanyText}
+                            onClick={() => {
+                              window.open(KODEFOX_LINK, "_blank");
+                            }}
+                          >
+                            {company}
+                          </Text>
+                        </div>
+                        <div>
+                          {technology.length > 0 ? (
+                            <Row style={styles.rowLabelContainer}>
+                              {technology.map((name) => {
+                                return (
+                                  <div
+                                    css={[
+                                      styles.labelContainerTechnology,
+                                      { backgroundColor: color },
+                                    ]}
+                                  >
+                                    <Text>{name}</Text>
+                                  </div>
+                                );
+                              })}
+                            </Row>
+                          ) : null}
+                          <Text css={styles.projectDescText}>{desc}</Text>
+                        </div>
+                      </TextEvent>
+                    )}
+                  </Zoom>
                 </>
               );
             }
