@@ -1,4 +1,4 @@
-import MyImage from "./selfPhoto.jpeg";
+import MyImage from "./selfPhoto.webp";
 import HuddleFire from "./huddleFire.png";
 import Insight from "./insights_logo.png";
 import DBO from "./tokoLogo.png";
