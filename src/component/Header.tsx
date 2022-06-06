@@ -1,6 +1,7 @@
 /** @jsxImportSource @emotion/react */
 
 import { css } from "@emotion/react";
+import Typed from "react-typed";
 import { Fade } from "react-reveal";
 
 import { COLORS, FONTS_SIZE, PADDING_MARGIN } from "../general/styles";
@@ -23,17 +24,27 @@ export default function Header() {
                   {DESCRIPTION.introductionName}
                 </Text>
               </div>
-              <Text
-                data-comp="text"
+              <Typed
+                data-comp="text-animation"
+                strings={[
+                  "I'm a Software Engineer",
+                  "I like to build things",
+                  "I'm a thinker",
+                  "I'm an easy person",
+                ]}
+                typeSpeed={50}
+                backSpeed={100}
+                loop
                 css={{ ...styles.descText, marginTop: "20px" }}
-              >
-                Software Engineer From Indonesia.
-              </Text>
+              />
               <Text
                 data-comp="text"
-                css={{ ...styles.descText, marginTop: "5px" }}
+                css={{
+                  ...styles.descText,
+                  marginTop: "5px",
+                }}
               >
-                Live in Jakarta and born in 1997
+                Live in Jakarta, Indonesia and born in 1997
               </Text>
             </div>
             <div css={styles.rightColumn}>
@@ -88,6 +99,7 @@ const styles = {
     color: COLORS.whiteCream,
     transition: "color 1.2s ease-in-out",
   }),
+  placeText: css({}),
   middleColumn: css({
     display: "flex",
     flex: 1,
@@ -128,6 +140,9 @@ const styles = {
     "&:hover [data-comp=quoteText]": {
       fontWeight: "bold",
       fontSize: FONTS_SIZE.large,
+    },
+    "&:hover [data-comp=text-animation]": {
+      color: COLORS.whiteCream,
     },
   }),
   quoteText: css({

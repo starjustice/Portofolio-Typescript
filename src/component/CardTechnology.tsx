@@ -1,5 +1,6 @@
 /** @jsxImportSource @emotion/react */
 
+import { css } from "@emotion/react";
 import { CSSInterpolation } from "@emotion/serialize";
 
 import { Card, List, Text } from "../core-ui";
@@ -14,7 +15,7 @@ export default function CardTechnology(props: CardTechnologyProps) {
   return (
     <Card style={styleCard}>
       <Card.Header>
-        <Text>{title}</Text>
+        <Text css={styles.titleText}>{title.toUpperCase()}</Text>
       </Card.Header>
       <Card.Content>
         <List data={data} />
@@ -22,3 +23,9 @@ export default function CardTechnology(props: CardTechnologyProps) {
     </Card>
   );
 }
+
+const styles = {
+  titleText: css({
+    fontWeight: "bold",
+  }),
+};

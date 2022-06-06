@@ -1,4 +1,7 @@
-import React from "react";
+/** @jsxImportSource @emotion/react */
+
+import { css } from "@emotion/react";
+import Text from "./Text";
 
 type ListProps = {
   data: Array<React.ReactNode>;
@@ -9,7 +12,9 @@ export default function List(props: ListProps) {
   return (
     <ul>
       {data.map((children) => (
-        <li>{children}</li>
+        <li>
+          <Text>{children}</Text>
+        </li>
       ))}
     </ul>
   );
