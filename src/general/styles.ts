@@ -9,6 +9,8 @@ export let COLORS = {
   whiteCream: "#fcf1d2",
   blueKodefox: "#4237dc",
   green: "green",
+  lightBlue: "#b5f9ff",
+  darkBrown: "#a36b02",
 };
 
 export let FONTS_SIZE = {

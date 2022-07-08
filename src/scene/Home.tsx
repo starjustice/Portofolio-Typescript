@@ -2,7 +2,13 @@
 
 import { css } from "@emotion/react";
 
-import { ContactInformation, Header, Project, Technology } from "../component";
+import {
+  ContactInformation,
+  Experience,
+  Header,
+  Project,
+  Technology,
+} from "../component";
 
 export default function Home() {
   return (
@@ -11,6 +17,7 @@ export default function Home() {
       <div css={styles.bodyContainer}>
         <Technology />
         <Project />
+        <Experience />
       </div>
       <ContactInformation />
     </div>

@@ -1,5 +1,5 @@
 import { COLORS } from "../styles";
-import { DBO, HuddleFire, Insight } from "../../assets/images";
+import { DBO, HuddleFire, Insight, Kodefox } from "../../assets/images";
 
 export let data = [
   {
@@ -66,3 +66,13 @@ export let data = [
 ];
 
 export let KODEFOX_LINK = "https://www.kodefox.com/";
+
+export let WORK_EXPERIENCE = [
+  {
+    company: "Kodefox",
+    year: "2019 - Now",
+    position: "Full Stack Developer",
+    desc: "In here I work using javascript programming language. I use React Native to build mobile app and website. Also mainly use Expo to run react native code to development.\nBeside that, I use node js, express to develop backend system with mainly postgresql as DB. Beside Create Program I also work to create and maintain server for app.",
+    image: Kodefox,
+  },
+];

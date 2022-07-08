@@ -1,0 +1,7 @@
+.code__panel {
+  transition: all .3s ease;
+}
+
+.code__button:hover{
+ cursor: pointer;
+}

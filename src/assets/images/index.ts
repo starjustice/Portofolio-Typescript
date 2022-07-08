@@ -4,5 +4,6 @@ import Insight from "./insights_logo.png";
 import DBO from "./tokoLogo.png";
 import Paint from "./paint.webp";
 import Computer from "./computer.webp";
+import Kodefox from "./kodefox.png";
 
-export { MyImage, HuddleFire, Insight, DBO, Paint, Computer };
+export { MyImage, HuddleFire, Insight, DBO, Paint, Computer, Kodefox };
