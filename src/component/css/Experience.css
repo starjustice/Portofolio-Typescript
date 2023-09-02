@@ -1,7 +1,15 @@
-.code__panel {
+/* .code__panel {
   transition: all .3s ease;
 }
 
-.code__button:hover{
- cursor: pointer;
+.code__button:hover {
+  cursor: pointer;
+} */
+
+.ReactCollapse--collapse {
+  transition: height 500ms;
+}
+
+.cardContainer {
+  cursor: pointer;
 }

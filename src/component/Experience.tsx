@@ -1,51 +1,48 @@
 /** @jsxImportSource @emotion/react */
 
 import { css } from "@emotion/react";
-import {
-  Accordion,
-  AccordionItem,
-  AccordionItemHeading,
-  AccordionItemButton,
-  AccordionItemPanel,
-} from "react-accessible-accordion";
+import { Collapse } from "react-collapse";
 
 import { Row, Text } from "../core-ui";
 import { WORK_EXPERIENCE } from "../general/data/work";
 import { COLORS, FONTS_SIZE, PADDING_MARGIN } from "../general/styles";
 import "./css/Experience.css";
+import { useState } from "react";
 
 export default function Experience() {
+  const [isOpen, setIsOpen] = useState(false);
   return (
     <div>
       <Text css={styles.experienceText}>Experience</Text>
-      <Accordion allowZeroExpanded>
-        {WORK_EXPERIENCE.map(
-          ({ company, year, desc, position, image }, index) => {
-            return (
-              <AccordionItem css={styles.accordionContainer} key={index}>
-                <AccordionItemHeading css={styles.accordionHeader}>
-                  <AccordionItemButton className="code__button">
-                    <Row>
-                      <img alt="" src={image} css={styles.image} />
-                      <div>
-                        <Text css={styles.textTitle}>{company}</Text>
-                        <Text css={styles.textSubTitle}>{year}</Text>
-                        <Text css={[styles.textSubTitle, styles.highlightText]}>
-                          {position}
-                        </Text>
-                      </div>
-                    </Row>
-                  </AccordionItemButton>
-                </AccordionItemHeading>
-                <AccordionItemPanel className="code__panel">
-                  <div css={styles.divider} />
-                  <Text css={styles.descText}>{desc}</Text>
-                </AccordionItemPanel>
-              </AccordionItem>
-            );
-          }
-        )}
-      </Accordion>
+
+      {WORK_EXPERIENCE.map(
+        ({ company, year, desc, position, image }, index) => {
+          return (
+            <div
+              className="cardContainer"
+              onClick={() => setIsOpen(!isOpen)}
+              key={index}
+              css={styles.accordionContainer}
+            >
+              <Row>
+                <img alt="" src={image} css={styles.image} />
+                <div>
+                  <Text css={styles.textTitle}>{company}</Text>
+                  <Text css={styles.textSubTitle}>{year}</Text>
+                  <Text css={[styles.textSubTitle, styles.highlightText]}>
+                    {position}
+                  </Text>
+                </div>
+              </Row>
+
+              <Collapse isOpened={isOpen}>
+                <div css={styles.divider} />
+                <Text css={styles.descText}>{desc}</Text>
+              </Collapse>
+            </div>
+          );
+        }
+      )}
     </div>
   );
 }
@@ -64,7 +61,6 @@ const styles = {
     padding: PADDING_MARGIN.medium,
     maxWidth: "40%",
   }),
-  accordionHeader: css({}),
   textTitle: css({
     fontSize: FONTS_SIZE.xLarge,
   }),
