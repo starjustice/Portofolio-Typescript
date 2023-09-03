@@ -9,23 +9,31 @@ import {
   Project,
   Technology,
 } from "../component";
+import { PADDING_MARGIN } from "../general/styles";
 
 export default function Home() {
   return (
     <div>
       <Header />
-      <div css={styles.bodyContainer}>
+      <div css={styles.TechContainer}>
         <Technology />
-        <Project />
+      </div>
+      <div css={styles.experienceContainer}>
         <Experience />
       </div>
+      <Project />
+
       <ContactInformation />
     </div>
   );
 }
 
 const styles = {
-  bodyContainer: css({
+  TechContainer: css({
     padding: "0px 60px",
+    marginBottom: PADDING_MARGIN.jumbo,
+  }),
+  experienceContainer: css({
+    marginBottom: PADDING_MARGIN.jumbo,
   }),
 };
