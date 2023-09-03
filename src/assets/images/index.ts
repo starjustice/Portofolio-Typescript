@@ -5,5 +5,15 @@ import DBO from "./tokoLogo.png";
 import Paint from "./paint.webp";
 import Computer from "./computer.webp";
 import Kodefox from "./kodefox.png";
+import parallaxBg from "./parallaxBg.jpg";
 
-export { MyImage, HuddleFire, Insight, DBO, Paint, Computer, Kodefox };
+export {
+  MyImage,
+  HuddleFire,
+  Insight,
+  DBO,
+  Paint,
+  Computer,
+  Kodefox,
+  parallaxBg,
+};
