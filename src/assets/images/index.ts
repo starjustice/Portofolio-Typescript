@@ -6,6 +6,7 @@ import Paint from "./paint.webp";
 import Computer from "./computer.webp";
 import Kodefox from "./kodefox.png";
 import parallaxBg from "./parallaxBg.jpg";
+import Lexicon from "./lexicon.png";
 
 export {
   MyImage,
@@ -16,4 +17,5 @@ export {
   Computer,
   Kodefox,
   parallaxBg,
+  Lexicon,
 };

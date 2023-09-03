@@ -1,3 +1,7 @@
-.marker-col{
+.marker-col {
   margin-left: 24px;
+}
+
+.Card-image-container {
+  cursor: pointer;
 }

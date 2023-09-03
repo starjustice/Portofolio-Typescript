@@ -1,5 +1,11 @@
 import { COLORS } from "../styles";
-import { DBO, HuddleFire, Insight, Kodefox } from "../../assets/images";
+import {
+  DBO,
+  HuddleFire,
+  Insight,
+  Kodefox,
+  Lexicon,
+} from "../../assets/images";
 
 export let data = [
   {
@@ -21,7 +27,7 @@ export let data = [
   {
     image: Insight,
     title: "Insight",
-    technology: ["React Native", "Graphql", "Node JS"],
+    technology: ["React Native", "Graphql", "Node JS", "Typescript", "Expo"],
     desc: "This system was created to help Kodefox clients monitor prices and the progress of ongoing projects in the form of a graph or chart",
     year: "2019",
     company: "KODEFOX",
@@ -30,7 +36,7 @@ export let data = [
   {
     image: "",
     title: "Sumjoy",
-    technology: ["React Native", "Firebase"],
+    technology: ["React Native", "Firebase", "Typescript", "Expo"],
     desc: "Sumjoy is an application to help create holiday packages and help travelers to find the desired holiday package",
     year: "2019-2020",
     company: "KODEFOX",
@@ -39,7 +45,7 @@ export let data = [
   {
     image: HuddleFire,
     title: "HuddleFire",
-    technology: ["React Native", "Graphql", "Node JS"],
+    technology: ["React Native", "Graphql", "Node JS", "Typescript", "Expo"],
     desc: "Huddlefire is a reminder application to remind people in an event. In this application in an event reminder there is a chat room and can invite others to join the event",
     year: "2020",
     company: "KODEFOX",
@@ -55,6 +61,9 @@ export let data = [
       "Nexus",
       "Prisma",
       "Aws",
+      "Typescript",
+      "Expo",
+      "Docker",
     ],
     desc: "The DBO application is an online shop application intended for building material stores buy material product from agent. The system created consists of a mobile application for shops to buy goods and a cms website for admins to manage content in mobile applications",
     year: "2020-2022",
@@ -62,6 +71,25 @@ export let data = [
     color: COLORS.indigo,
     linkProject:
       "https://play.google.com/store/apps/details?id=com.dbo.newdboindonesiahd&hl=in&gl=US",
+  },
+  {
+    image: Lexicon,
+    title: "Lexicon",
+    technology: [
+      "React Native",
+      "Graphql",
+      "Node JS",
+      "Ruby",
+      "Aws",
+      "Typescript",
+      "Expo",
+      "Docker",
+    ],
+    desc: "Lexicon is an open-source project that aims to create a mobile app template for a discussion app integrated with Discourse. (For more information about Discourse, please refer to this link: https://www.discourse.org/). In addition to the app, this project contains custom plugins for Discourse, which are used to implement push notifications and deep links for the Lexicon app. These plugins are built using Ruby.",
+    year: "2023",
+    company: "KODEFOX",
+    color: COLORS.darkPurple,
+    linkProject: "https://github.com/lexiconhq",
   },
 ];
 

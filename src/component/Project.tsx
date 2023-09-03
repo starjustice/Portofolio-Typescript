@@ -90,58 +90,58 @@ export default function Project() {
                 <>
                   <Zoom>
                     {image ? (
-                      <ImageEvent
-                        date={year}
-                        text={title}
-                        src={image}
+                      <div
+                        className={linkProject ? "Card-image-container" : ""}
                         onClick={
                           linkProject
                             ? () => {
                                 window.open(linkProject, "_blank");
                               }
-                            : ""
+                            : undefined
                         }
                       >
-                        <div css={styles.projectCompanyContainer}>
-                          <Text
-                            css={styles.projectCompanyText}
-                            onClick={() => {
-                              window.open(KODEFOX_LINK, "_blank");
-                            }}
-                          >
-                            {company}
-                          </Text>
-                        </div>
-                        {technology.length > 0 ? (
-                          <Row style={styles.rowLabelContainer}>
-                            {technology.map((name) => {
-                              return (
-                                <div
-                                  css={[
-                                    styles.labelContainerTechnology,
-                                    { backgroundColor: color },
-                                  ]}
-                                >
-                                  <Text
-                                    style={{
-                                      color:
-                                        color === COLORS.darkPurple
-                                          ? COLORS.white
-                                          : COLORS.black,
-                                    }}
+                        <ImageEvent date={year} text={title} src={image}>
+                          <div css={styles.projectCompanyContainer}>
+                            <Text
+                              css={styles.projectCompanyText}
+                              onClick={() => {
+                                window.open(KODEFOX_LINK, "_blank");
+                              }}
+                            >
+                              {company}
+                            </Text>
+                          </div>
+                          {technology.length > 0 ? (
+                            <Row style={styles.rowLabelContainer}>
+                              {technology.map((name) => {
+                                return (
+                                  <div
+                                    css={[
+                                      styles.labelContainerTechnology,
+                                      { backgroundColor: color },
+                                    ]}
                                   >
-                                    {name}
-                                  </Text>
-                                </div>
-                              );
-                            })}
-                          </Row>
-                        ) : null}
+                                    <Text
+                                      style={{
+                                        color:
+                                          color === COLORS.darkPurple
+                                            ? COLORS.white
+                                            : COLORS.black,
+                                      }}
+                                    >
+                                      {name}
+                                    </Text>
+                                  </div>
+                                );
+                              })}
+                            </Row>
+                          ) : null}
 
-                        <div>
-                          <Text css={styles.projectDescText}>{desc}</Text>
-                        </div>
-                      </ImageEvent>
+                          <div>
+                            <Text css={styles.projectDescText}>{desc}</Text>
+                          </div>
+                        </ImageEvent>
+                      </div>
                     ) : (
                       <TextEvent date={year} text={title}>
                         <div css={styles.projectCompanyContainer}>
